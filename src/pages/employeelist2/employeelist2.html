@@ -1,0 +1,56 @@
+<!--
+  Generated template for the Employeelist2Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>employee details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="bd">
+  <form [formGroup]="myForm">
+      <ion-list>
+          <ion-item class="abc">
+              <ion-label floating>Eid</ion-label>
+              <ion-input type="tel" formControlName="eid" value="{{eid}}" disabled [(ngModel)] = "eid"></ion-input>  
+            </ion-item>  
+
+        <ion-item class="abc">
+          <ion-label floating>Name</ion-label>
+          <ion-input type="text" formControlName="name" value="{{name}}" [(ngModel)] = "name"></ion-input>  
+        </ion-item>
+  
+
+    <ion-item class="abc">
+      <ion-label floating>Designation</ion-label>
+      <ion-input type="text" formControlName="designation" value="{{designation}}" [(ngModel)] = "designation"></ion-input>  
+    </ion-item>
+ 
+<ion-item class="abc">
+    <ion-label floating>Email id</ion-label>
+  <ion-input type="email" formControlName="email" value="{{email}}" [(ngModel)] = "email"></ion-input>
+</ion-item>
+
+
+<ion-item class="abc">
+    <ion-label floating>Mobile</ion-label>
+  <ion-input type="tel" formControlName="mobile" value="{{mobile}}" [(ngModel)] = "mobile"></ion-input>
+</ion-item>
+
+
+<ion-item id="abc">
+  <ion-label>Employee type</ion-label>
+  <ion-select [(ngModel)] ="emptype" formControlName="type" placeholder="{{emptype}}">
+    <ion-option value="office">office</ion-option>
+    <ion-option value="on-field">on-field</ion-option>
+  </ion-select>
+</ion-item>
+
+</ion-list>
+
+<button ion-button (click)="save()" block [disabled]="!myForm.valid">save</button>
+</form>
+</ion-content>

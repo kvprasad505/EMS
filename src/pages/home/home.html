@@ -1,0 +1,42 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content class="image">
+
+  <ion-icon name="person" class="person"></ion-icon>
+
+<div class="logincard"> <ion-card >
+
+<ion-item>
+<ion-label><ion-icon name="person"></ion-icon></ion-label>
+<ion-input type="tel" placeholder="Username" [(ngModel)]="eid"></ion-input>
+</ion-item>
+
+<ion-item>
+<ion-label><ion-icon name="unlock"></ion-icon></ion-label>
+<ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+</ion-item>
+
+  <ion-item>
+  <ion-label>Remember me</ion-label>
+  <ion-checkbox color="dark" [(ngModel)]="remember"></ion-checkbox>
+  </ion-item>
+
+
+</ion-card></div>
+
+<div>
+    <button ion-button color="secondary" round full (click)="login()">Sign-In</button>
+
+
+  </div>
+
+
+
+</ion-content>

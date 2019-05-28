@@ -1,0 +1,33 @@
+<!--
+  Generated template for the AssignedsitesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>assignedsites</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of data" (click)="itemclick(item)">
+      <ion-row>
+     <div class="left"> 
+       <p>Site_id : {{item.id}} </p>
+     </div> 
+     <div class="right"> 
+        {{item.status}}
+       </div>
+    </ion-row>
+    <ion-row>
+        <div class="left2"> 
+            <p>site name : {{item.name}}</p>
+             <p>latitude : {{item.latitude}}</p>
+             <p>longitude : {{item.longitude}} </p>
+           </div> 
+    </ion-row>
+    </ion-item>    
+  </ion-list>
+</ion-content>

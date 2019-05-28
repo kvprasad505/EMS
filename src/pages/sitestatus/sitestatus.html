@@ -1,0 +1,95 @@
+<!--
+  Generated template for the SitestatusPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>sitestatus</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+      <ion-label>search by employee</ion-label>
+      <ion-toggle checked="false" (ionChange)="togglechange($event)"></ion-toggle>
+  </ion-item>
+
+<ion-list>
+  <ion-item *ngIf=sel_site>
+    <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar> -->
+    <ion-label>Select-Site</ion-label>
+    <ionic-selectable
+    item-content
+    [(ngModel)]="port"
+    [items]="values1"
+    itemValueField="id"
+    itemTextField="name"
+    [canSearch]="true"
+    (onChange)="sitechange($event)">
+</ionic-selectable>
+</ion-item>
+
+<ion-item *ngIf=sel_emp>
+  <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar> -->
+  <ion-label>Select-employee</ion-label>
+  <ionic-selectable
+  item-content
+  [(ngModel)]="port2"
+  [items]="values2"
+  itemValueField="eid"
+  itemTextField="name"
+  [canSearch]="true"
+  (onChange)="employeechange($event)">
+</ionic-selectable>
+</ion-item>
+</ion-list>
+
+<div *ngIf=sel_site>
+    <ion-list>
+      <ion-item *ngFor="let item of data">
+        <ion-row>
+       <div class="left"> 
+         <p>Site_id : {{item.site_id}} </p>
+       </div> 
+       <div class="right"> 
+          {{item.status}}
+         </div>
+      </ion-row>
+      <ion-row>
+          <div class="left2"> 
+              <p>site name : {{item.name}}</p>
+               <p>assigned to : {{item.employee_eid}} on {{item.assigned_date}} </p>
+               <p>reached on : {{item.reached_date}}</p>
+               <p>finished on : {{item.finished_date}} </p>
+             </div> 
+      </ion-row>
+      </ion-item>    
+    </ion-list>
+</div>
+
+<div *ngIf=sel_emp>
+    <ion-list>
+        <ion-item *ngFor="let item of data2">
+          <ion-row>
+         <div class="left"> 
+           <p>emp_eid : {{item.employee_eid}} </p>
+         </div> 
+         <div class="right"> 
+            {{item.status}}
+           </div>
+        </ion-row>
+        <ion-row>
+            <div class="left2"> 
+                <p>site id : {{item.site_id}}</p>
+                 <p>site name : {{item.name}} </p>
+                 <p>assigned on : {{item.assigned_date}} </p>
+                 <p>reached on : {{item.reached_date}} </p>
+                 <p>finished on : {{item.finished_date}} </p>
+               </div> 
+        </ion-row>
+        </ion-item>    
+      </ion-list>
+  </div>
+</ion-content>

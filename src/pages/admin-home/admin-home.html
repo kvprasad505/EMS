@@ -1,0 +1,61 @@
+<!--
+  Generated template for the AdminHomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="custom">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>admin-home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+   <ion-grid>
+     <ion-row>
+       <ion-col>
+         <ion-card text-center class="cardstyle" color="custom2" (click)="addemployee()">
+            <ion-card-content>
+           <ion-icon name="add"></ion-icon>
+           <h2>add employee</h2>
+          </ion-card-content>
+         </ion-card>
+       </ion-col>
+
+       <ion-col>
+          <ion-card text-center class="cardstyle" color="custom2" (click)="today()">
+             <ion-card-content>
+            <ion-icon name="school"></ion-icon>
+            <h2>today's attendance</h2>
+           </ion-card-content>
+          </ion-card>
+        </ion-col>
+     </ion-row>
+
+     <ion-row>
+      <ion-col>
+        <ion-card text-center class="cardstyle" color="custom2" (click)="addsite()">
+           <ion-card-content>
+            <ion-icon name="add-circle"></ion-icon>
+          <h2>add site</h2>
+         </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col>
+         <ion-card text-center class="cardstyle" color="custom2" (click)="assignsite()">
+            <ion-card-content>
+              <ion-icon name="browsers"></ion-icon>
+           <h2>Assign site</h2>
+          </ion-card-content>
+         </ion-card>
+       </ion-col>
+    </ion-row>
+   </ion-grid>
+
+
+
+</ion-content>
